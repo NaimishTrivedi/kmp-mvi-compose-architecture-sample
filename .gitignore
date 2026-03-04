@@ -1,0 +1,77 @@
+# ==========================================
+# General
+# ==========================================
+*.log
+*.tmp
+*.swp
+*.bak
+*.orig
+.DS_Store
+Thumbs.db
+
+# ==========================================
+# Gradle
+# ==========================================
+.gradle/
+build/
+**/build/
+
+# Keep Gradle Wrapper (IMPORTANT for public repo)
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# ==========================================
+# Local machine specific
+# ==========================================
+local.properties
+*.keystore
+*.jks
+keystore.properties
+
+# ==========================================
+# Android Studio / IntelliJ
+# ==========================================
+.idea/
+*.iml
+out/
+
+# ==========================================
+# Kotlin Multiplatform
+# ==========================================
+.kotlinc/
+konan/
+
+# ==========================================
+# Android
+# ==========================================
+captures/
+.externalNativeBuild/
+.cxx/
+
+# ==========================================
+# iOS / Xcode
+# ==========================================
+DerivedData/
+*.xcuserdata
+*.xcuserstate
+
+# CocoaPods
+Pods/
+
+# IMPORTANT:
+# Keep Podfile.lock for reproducible builds
+# So DO NOT ignore Podfile.lock in public repo
+
+# ==========================================
+# Web (if using KMP JS)
+# ==========================================
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# ==========================================
+# Reports & Coverage
+# ==========================================
+coverage/
+jacoco/
+*.exec
