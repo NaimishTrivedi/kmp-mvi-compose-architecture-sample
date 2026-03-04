@@ -1,5 +1,6 @@
 package com.om.ecommercedemo.ui.features.home
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -26,6 +27,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -42,13 +44,11 @@ fun HomeContent(
     state: HomeUiState = HomeUiState(),
     onIntent: (HomeIntent) -> Unit = {}
 ){
-    LaunchedEffect(Unit){
-        onIntent(HomeIntent.GetHomeCategoryData)
-    }
 
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .background(Color.White)
             .padding(16.dp)
     ) {
 // 1️⃣ Center Logo
@@ -59,7 +59,7 @@ fun HomeContent(
             contentAlignment = Alignment.Center
         ) {
             Text(
-                text = "LOGO",
+                text = "KMP MVI Demo",
                 style = MaterialTheme.typography.headlineMedium
             )
         }
@@ -110,14 +110,14 @@ fun HomeContent(
 fun CategoryItem(categoryDto: CategoryDto, onClick:(String) -> Unit) {
     Surface(
         shape = RoundedCornerShape(20.dp),
-        color = MaterialTheme.colorScheme.primaryContainer
+        color = Color.Black
     ) {
         Text(
             text = categoryDto.name,
             modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp).clickable{
                 onClick(categoryDto.url)
             },
-            style = MaterialTheme.typography.bodyMedium
+            style = MaterialTheme.typography.bodyMedium.copy(color = Color.White)
         )
     }
 }
@@ -137,7 +137,6 @@ fun ProductItem(productDto: ProductDto) {
             AsyncImage(
                 model = ImageRequest.Builder(LocalPlatformContext.current)
                     .data(productDto.thumbnail) // Your URL from API
-                    .crossfade(true)
                     .build(),
                 contentDescription = productDto.title,
                 modifier = Modifier.fillMaxSize(),

@@ -12,6 +12,10 @@ class HomeViewModel(
     private val homeRepository: HomeRepository
 ) : BaseViewModel<HomeUiState, HomeIntent, CoreEvent>(HomeUiState()) {
 
+    init {
+        onIntent(HomeIntent.GetHomeCategoryData)
+    }
+
     override fun handleIntent(intent: HomeIntent) {
         when(intent){
             is HomeIntent.GetHomeCategoryData -> {
