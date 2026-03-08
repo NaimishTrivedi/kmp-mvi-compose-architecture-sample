@@ -1,5 +1,7 @@
 package com.om.ecommercedemo.ui.features.home
 
+import androidx.compose.animation.AnimatedVisibilityScope
+import androidx.compose.animation.SharedTransitionScope
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -42,7 +44,9 @@ import com.om.ecommercedemo.domain.model.ProductDto
 @Composable
 fun HomeContent(
     state: HomeUiState = HomeUiState(),
-    onIntent: (HomeIntent) -> Unit = {}
+    onIntent: (HomeIntent) -> Unit = {},
+    sharedTransitionScope: SharedTransitionScope? = null,
+    animatedVisibilityScope: AnimatedVisibilityScope? = null,
 ){
 
     Column(
@@ -99,7 +103,9 @@ fun HomeContent(
                 modifier = Modifier.fillMaxSize()
             ) {
                 items(state.products) { product ->
-                    ProductItem(product)
+                    ProductItem(product,sharedTransitionScope,animatedVisibilityScope){
+                        onIntent(HomeIntent.ProductItemClicked(product))
+                    }
                 }
             }
         }
@@ -123,25 +129,38 @@ fun CategoryItem(categoryDto: CategoryDto, onClick:(String) -> Unit) {
 }
 
 @Composable
-fun ProductItem(productDto: ProductDto) {
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp),
-        shape = RoundedCornerShape(8.dp)
-    ) {
-        Box(
-            modifier = Modifier.fillMaxWidth().aspectRatio(1f),
-            contentAlignment = Alignment.Center
+fun ProductItem(productDto: ProductDto,
+                sharedTransitionScope: SharedTransitionScope?,
+                animatedVisibilityScope: AnimatedVisibilityScope?,
+                onClick: () -> Unit) {
+
+    with(sharedTransitionScope!!) {
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp),
+            shape = RoundedCornerShape(8.dp)
         ) {
-            AsyncImage(
-                model = ImageRequest.Builder(LocalPlatformContext.current)
-                    .data(productDto.thumbnail) // Your URL from API
-                    .build(),
-                contentDescription = productDto.title,
-                modifier = Modifier.fillMaxSize(),
-                contentScale = ContentScale.Crop
-            )
+            Box(
+                modifier = Modifier.fillMaxWidth().aspectRatio(1f),
+                contentAlignment = Alignment.Center
+            ) {
+                AsyncImage(
+                    model = ImageRequest.Builder(LocalPlatformContext.current)
+                        .data(productDto.thumbnail) // Your URL from API
+                        .build(),
+                    contentDescription = productDto.title,
+                    modifier = Modifier.fillMaxSize().sharedElement(
+                        sharedContentState = rememberSharedContentState(
+                            key = "product-image-${productDto.id}"
+                        ),
+                        animatedVisibilityScope = animatedVisibilityScope!!
+                    ).clickable{
+                        onClick()
+                    },
+                    contentScale = ContentScale.Crop
+                )
+            }
         }
     }
 }
