@@ -70,19 +70,11 @@ Data is fetched from APIs and rendered using Compose Multiplatform.
 ### Screen recording
 <table style="width: 100%;">
   <tr>
-    <td align="center" width="50%">
-      <video src="screens/mobile.mp4" width="500px" controls muted autoplay loop>
-        Your browser does not support the video tag.
-      </video><br>
-      <b>📱 Mobile</b>
+    <td style="width: 50%; border: none;">
+      <video src="https://github.com/user-attachments/assets/335b38d3-2bb5-4f0b-a84d-5f55136397b8" width="100%" muted autoplay loop></video>
     </td>
-  </tr>
-  <tr>
-    <td align="center" width="50%">
-      <video src="screens/web.mp4" width="500px" controls muted autoplay loop>
-        Your browser does not support the video tag.
-      </video><br>
-       <b>🌐 Web</b>
+    <td style="width: 50%; border: none;">
+      <video src="https://github.com/user-attachments/assets/95964630-8d09-47fa-89f7-321c99018243" width="100%" muted autoplay loop></video>
     </td>
   </tr>
 </table>
