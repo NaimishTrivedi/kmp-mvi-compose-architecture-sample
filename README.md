@@ -12,6 +12,11 @@ A production-ready Kotlin Multiplatform (KMP) demo project demonstrating:<br/>
 
 This project is built as a portfolio-ready architecture template for small, medium, and enterprise applications.
 
+## 🌐 Live Web Demo
+
+Try the app in browser:<br/>
+👉 <a href="https://naimishtrivedi.github.io/kmp-mvi-compose-architecture-sample/">Click Here</a>
+
 ## 📱 Platforms Supported
 * Android
 * iOS
