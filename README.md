@@ -67,6 +67,26 @@ Data is fetched from APIs and rendered using Compose Multiplatform.
     </tr>
 </table>
 
+### Screen recording
+<table style="width: 100%;">
+  <tr>
+    <td align="center" width="50%">
+      <video src="screens/mobile.mp4" width="500px" controls muted autoplay loop>
+        Your browser does not support the video tag.
+      </video><br>
+      <b>📱 Mobile</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <video src="screens/web.mp4" width="500px" controls muted autoplay loop>
+        Your browser does not support the video tag.
+      </video><br>
+       <b>🌐 Web</b>
+    </td>
+  </tr>
+</table>
+
 ## 🛠 Tech Stack
 
 | Technology | Purpose |
