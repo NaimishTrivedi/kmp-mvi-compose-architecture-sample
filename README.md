@@ -23,6 +23,50 @@ This project is built as a portfolio-ready architecture template for small, medi
 
 Data is fetched from APIs and rendered using Compose Multiplatform.
 
+### 🤖 Android
+<table style="width: 100%;">
+  <tr>
+    <td align="center" width="50%">
+      <img src="screens/Android1.png" width="300px" alt="Screen 1"><br>
+      <b>Product List</b>
+    </td>
+    <td align="center" width="50%">
+      <img src="screens/Android2.png" width="300px" alt="Screen 2"><br>
+      <b>Product Detail</b>
+    </td>
+  </tr>
+</table>
+
+### 🍎 iOS
+<table style="width: 100%;">
+  <tr>
+    <td align="center" width="50%">
+      <img src="screens/iPhone1.png" width="300px" alt="Screen 1"><br>
+      <b>Product List</b>
+    </td>
+    <td align="center" width="50%">
+      <img src="screens/iPhone2.png" width="300px" alt="Screen 2"><br>
+      <b>Product Detail</b>
+    </td>
+  </tr>
+</table>
+
+### 🌐 Web
+<table style="width: 100%;">
+  <tr>
+    <td align="center" width="50%">
+      <img src="screens/Web1.png" width="500px" alt="Screen 1"><br>
+      <b>Product List</b>
+    </td>
+  </tr>
+    <tr>
+         <td align="center" width="50%">
+      <img src="screens/Web2.png" width="500px" alt="Screen 2"><br>
+      <b>Product Detail</b>
+    </td>
+    </tr>
+</table>
+
 ## 🛠 Tech Stack
 
 | Technology | Purpose |
